@@ -18,6 +18,7 @@ public class UPIController {
     UPIService ups;
     @PostMapping("/UPIRegister")
     public ResponseEntity registerUPI(@RequestBody UPIRegisterDTO upiRegisterDTO){
+        upiLogger.info("In UPI Register controller");
         try{
             String response = ups.registerUPI(upiRegisterDTO);
             upiLogger.info("Successfully registered for UPI");
